@@ -13,9 +13,8 @@ const styles =  StyleSheet.create({
         paddingRight: 10,
         backgroundColor: '#24292e',
     },link: {
-        color: 'white',
-        fontWeight: 'bold',
-        margin: 10
+        marginRight: 10,
+        marginLeft: 10
     }
 })
 
@@ -24,11 +23,15 @@ const AppBar = () => {
         <View style={styles.conatainer}>
             <ScrollView horizontal >
                 <TouchableWithoutFeedback >
-                    <Link href={'/'} fontWeight={'bold'} style={styles.link}>Repositories</Link>
+                    <Link asChild href={'/'} style={styles.link}>
+                        <Text fontWeight={'bold'} style={{color: 'white'}}>Repositories</Text>
+                    </Link>
                 </TouchableWithoutFeedback>
 
                 <TouchableWithoutFeedback >
-                    <Link href={'/SigIn'} fontWeight={'bold'} style={styles.link}>Sig In</Link>
+                    <Link href={'/SigIn'} asChild style={styles.link} >
+                        <Text fontWeight={'bold'} style={{color: 'white'}}>Sig In</Text>
+                    </Link>
                 </TouchableWithoutFeedback>
             </ScrollView>
         </View>
