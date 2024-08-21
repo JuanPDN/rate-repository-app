@@ -1,9 +1,7 @@
 import Main from "../src/components/Main";
 
 const Index = () => {
-    return (
-        <Main />
-    )
-}
+  return <Main />;
+};
 
-export default Index
+export default Index;
