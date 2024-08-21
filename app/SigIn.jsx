@@ -5,6 +5,7 @@ import { Formik } from "formik";
 
 import FormikTextInput from "../src/components/FormikTextInput";
 import Text from "../src/components/Text";
+import validationSchema from "../src/utils/validationScheme";
 
 const onSubmit = (values) => {
   console.log(values);
@@ -30,21 +31,24 @@ const SigIn = () => {
     <View style={styles.container}>
       <Formik
         initialValues={{ username: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
       >
-        <View>
-          <FormikTextInput name="username" placeholder="Username" />
-          <FormikTextInput
-            name="password"
-            placeholder="Password"
-            secureTextEntry
-          />
-          <Pressable style={styles.btn} onPress={onSubmit}>
-            <Text color={"white"} fontSize={"subheading"} fontWeight={"bold"}>
-              Submit
-            </Text>
-          </Pressable>
-        </View>
+        {({ handleSubmit }) => (
+          <View>
+            <FormikTextInput name="username" placeholder="Username" />
+            <FormikTextInput
+              name="password"
+              placeholder="Password"
+              secureTextEntry
+            />
+            <Pressable style={styles.btn} onPress={handleSubmit}>
+              <Text color={"white"} fontSize={"subheading"} fontWeight={"bold"}>
+                Submit
+              </Text>
+            </Pressable>
+          </View>
+        )}
       </Formik>
     </View>
   );
