@@ -1,13 +1,17 @@
 import { View } from "react-native"
-import { Slot } from "expo-router"
+import { Stack } from "expo-router"
 
 import AppBar from "../src/components/AppBar"
 
-export default function Layout({ children }) {
+export default function Layout() {
     return (
-        <View>
+        <View style={{flex: 1}}>
             <AppBar/>
-            <Slot />
+            <Stack
+                screenOptions={{
+                    headerShown: false,
+                }}
+            />
         </View>
     )
 }

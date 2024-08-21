@@ -1,6 +1,6 @@
 import React from "react";
 import Constants from 'expo-constants'
-import { StyleSheet, View, TouchableWithoutFeedback, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 
 import Text from './Text'
 import { Link } from "expo-router";
@@ -22,17 +22,15 @@ const AppBar = () => {
     return (
         <View style={styles.conatainer}>
             <ScrollView horizontal >
-                <TouchableWithoutFeedback >
-                    <Link asChild href={'/'} style={styles.link}>
-                        <Text fontWeight={'bold'} style={{color: 'white'}}>Repositories</Text>
-                    </Link>
-                </TouchableWithoutFeedback>
 
-                <TouchableWithoutFeedback >
-                    <Link href={'/SigIn'} asChild style={styles.link} >
-                        <Text fontWeight={'bold'} style={{color: 'white'}}>Sig In</Text>
-                    </Link>
-                </TouchableWithoutFeedback>
+                <Link  href={'/'} style={styles.link}>
+                    <Text fontWeight={'bold'} style={{color: 'white'}}>Repositories</Text>
+                </Link>
+            
+                <Link  href={'/SigIn'} style={styles.link} >
+                    <Text fontWeight={'bold'} style={{color: 'white'}}>Sig In</Text>
+                </Link>
+                
             </ScrollView>
         </View>
     )
