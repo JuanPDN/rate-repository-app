@@ -42,10 +42,10 @@ const RepositoryItem = ({ item }) => {
   return (
     <View style={styles.card}>
       <View style={styles.containerInfo}>
-        <Image source={{ uri: item.ownerAvatarUrl }} style={styles.image} />
+        <Image source={{ uri: item.owner.avatar_url }} style={styles.image} />
         <View style={styles.info}>
           <Text fontWeight={"bold"} fontSize={"subheading"}>
-            {item.fullName}
+            {item.full_name}
           </Text>
           <Text color={"textSecundary"}>{item.description}</Text>
           <View style={styles.tag}>
@@ -54,10 +54,10 @@ const RepositoryItem = ({ item }) => {
         </View>
       </View>
       <View style={styles.stats}>
-        <Stat label={"Stars"} value={item.stargazersCount} />
-        <Stat label={"Forks"} value={item.forksCount} />
-        <Stat label={"Reviews"} value={item.reviewCount} />
-        <Stat label={"Rating"} value={item.ratingAverage} />
+        <Stat label={"Stars"} value={item.stargazers_count} />
+        <Stat label={"Forks"} value={item.forks_count} />
+        <Stat label={"Reviews"} value={item.watchers_count} />
+        <Stat label={"Rating"} value={item.rating_average || 0} />
       </View>
     </View>
   );
