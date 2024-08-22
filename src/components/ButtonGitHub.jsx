@@ -5,7 +5,7 @@ import Text from "./Text";
 
 const styles = StyleSheet.create({
   btn: {
-    padding: 10,
+    padding: 15,
     backgroundColor: "#0366d6",
     borderRadius: 5,
     marginTop: 10,
