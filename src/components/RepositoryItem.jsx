@@ -5,7 +5,7 @@ import { Link } from "expo-router";
 import Text from "./Text";
 import Stat from "./Stat";
 
-const RepositoryItem = ({ item }) => {
+const RepositoryItem = ({ item, asChild }) => {
   const styles = StyleSheet.create({
     image: {
       width: 50,
@@ -67,6 +67,7 @@ const RepositoryItem = ({ item }) => {
             <Stat label={"Reviews"} value={item?.watchers_count} />
             <Stat label={"Rating"} value={item?.rating_average || 0} />
           </View>
+          {asChild}
         </Pressable>
       </Link>
     </View>

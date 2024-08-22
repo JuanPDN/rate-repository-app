@@ -1,9 +1,12 @@
-import { View, Text } from "react-native";
-
-import RepositoryItem from "../../src/components/RepositoryItem";
-import { useLocalSearchParams } from "expo-router";
-import useRepositoryById from "../../src/hooks/useRepositoryById";
 import React from "react";
+import { View } from "react-native";
+
+import { useLocalSearchParams } from "expo-router";
+
+import Text from "../../src/components/Text";
+import RepositoryItem from "../../src/components/RepositoryItem";
+import useRepositoryById from "../../src/hooks/useRepositoryById";
+import ButtonGitHub from "../../src/components/ButtonGitHub";
 
 const RepositoryById = () => {
   const { id } = useLocalSearchParams();
@@ -15,7 +18,8 @@ const RepositoryById = () => {
       </View>
     );
   }
-  return <RepositoryItem item={repository} />;
+
+  return <RepositoryItem item={repository} asChild={ButtonGitHub()} />;
 };
 
 export default RepositoryById;
