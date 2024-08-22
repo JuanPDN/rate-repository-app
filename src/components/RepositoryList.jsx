@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
-  const { repositories } = useRepositories();
+  const { repositories, loadMore } = useRepositories();
 
   const repositoriesNode = repositories
-    ? repositories.filter((repo) => repo.language).map((edge) => edge)
+    ? repositories.filter((repo) => repo.language)
     : [];
 
   return (
@@ -25,6 +25,8 @@ const RepositoryList = () => {
       ItemSeparatorComponent={ItemSeparator}
       renderItem={({ item }) => <RepositoryItem item={item} />}
       keyExtractor={(item) => item.id}
+      onEndReached={() => loadMore()}
+      onEndReachedThreshold={0.5}
     />
   );
 };
